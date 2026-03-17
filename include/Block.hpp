@@ -9,7 +9,7 @@
 
 class Block{
 public:
-	string::prev_block_hash;
+	std::string prev_block_hash;
 	std::string merkle_root;
 	uint64_t timestamp;
 	uint64_t nonce;

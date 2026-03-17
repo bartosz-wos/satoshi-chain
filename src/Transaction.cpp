@@ -10,7 +10,7 @@ std::string Transaction::getHash() const{
         std::stringstream ss;
         for(const auto& in : inputs)
                 ss << in.prev_tx_hash << in.output_idx << in.signature;
-        for(const auto& : outputs)
+        for(const auto& out : outputs)
                 ss << out.amount << out.to_adress;
         SHA256 sha;
         sha.update(ss.str());

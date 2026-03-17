@@ -10,7 +10,7 @@ struct TxIn{
 	std::string signature;
 };
 
-struct Txout{
+struct TxOut{
 	double amount;
 	std::string to_adress;
 };
@@ -18,8 +18,8 @@ struct Txout{
 class Transaction{
 public:
 	std::string tx_hash;
-	std::vector<TxIn>inputs;
-	std::vector<TxOut>outputs;
+	std::vector<TxIn> inputs;
+	std::vector<TxOut> outputs;
 
 	Transaction() = default;
 	Transaction(std::vector<TxIn> in, std::vector<TxOut> out);
