@@ -14,7 +14,7 @@ Blockchain::Blockchain(uint32_t difficulty) : difficulty(difficulty){
 	chain.push_back(std::move(genesis));
 }
 
-Block Blockchain::getLastBlock() const{
+const Block& Blockchain::getLastBlock() const{
 	return chain.back();
 }
 
@@ -37,12 +37,7 @@ bool Blockchain::isValid() const{
 			return 0;
 		}
 
-		std::stringstream ss;
-		for(const auto& tx : cur.transactions)
-			ss << tx.getHash();
-		SHA256 sha;
-		sha.update(ss.str());
-		std::string calc_merkle = sha.digest();
+		std::string calc_merkle = Block::calcMerkleRoot(cur.transactions);
 
 		if(calc_merkle != cur.merkle_root){
 			std::cout << "merkle root is wrong" << std::endl;

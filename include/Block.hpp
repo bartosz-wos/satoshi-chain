@@ -21,5 +21,9 @@ public:
 
 	std::string getHash() const;
 
+	static std::string calcMerkleRoot(const std::vector<Transaction>& txs);
+
+	std::vector<std::string> getMerkleProof(const std::string& target_tx_hash) const;
+
 	void mineblock(uint32_t difficulty);
 };
