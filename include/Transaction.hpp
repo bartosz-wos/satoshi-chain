@@ -11,7 +11,7 @@ struct TxIn{
 };
 
 struct TxOut{
-	double amount;
+	uint64_t amount;
 	std::string to_adress;
 };
 

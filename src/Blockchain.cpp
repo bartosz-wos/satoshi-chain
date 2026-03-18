@@ -14,7 +14,7 @@ Blockchain::Blockchain(uint32_t difficulty) : difficulty(difficulty){
 	chain.push_back(std::move(genesis));
 }
 
-Block Blockchain::getLastBlock() const{
+const Block& Blockchain::getLastBlock() const{
 	return chain.back();
 }
 

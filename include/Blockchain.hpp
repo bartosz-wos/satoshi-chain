@@ -11,7 +11,7 @@ public:
 
 public:
 	Blockchain(uint32_t difficulty);
-	Block getLastBlock() const;
+	const Block& getLastBlock() const;
 	void addBlock(Block new_block);
 	bool isValid() const;
 };
